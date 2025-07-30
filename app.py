@@ -21,28 +21,35 @@ if uploaded_file is not None:
     if st.button("Convert to JSON"):
         json_object_list = []
 
-        for _, row in data.iterrows():
-            json_object = {
-                "prod_sku": row.get("SKU", ""),
-                "prod_name": row.get("Name ↗️", ""),
-                "prod_odoo_id": None,
-                "category": "RMQ Sample",
-                "consumption_time": None,
-                "prod_lots": [
-                    {
-                        "lot_ldb_id": None,
-                        "lot_odoo_id": None,
-                        "lot_name": row.get("LOT", ""),
-                        "best_before": None,
-                        "expiration_date": None,
-                        "location": location,
-                        "mos": [],
-                        "raw_materials": []
-                    }
-                ]
-            }
+    for _, row in data.iterrows():
+        if row.get("Odoo", "").strip().lower() != "items not in odoo":
+            continue  # Skip rows already in Odoo
 
-            json_object_list.append(json_object)
+        json_object = {
+            "prod_sku": row.get("SKU", ""),
+            "prod_name": row.get("Name ↗️", ""),
+            "prod_odoo_id": None,
+            "category": "RMQ Sample",
+            "consumption_time": None,
+            "prod_lots": [
+                {
+                    "lot_ldb_id": None,
+                    "lot_odoo_id": None,
+                    "lot_name": row.get("LOT", ""),
+                    "best_before": None,
+                    "expiration_date": None,
+                    "location": location,
+                    "mos": [],
+                    "raw_materials": []
+                }
+            ]
+        }
+
+        json_object_list.append(json_object)
+        st.success(f"✅ {len(json_object_list)} new items prepared for JSON export.")
+        if len(data) > len(json_object_list):
+            st.warning(f"ℹ️ {len(data) - len(json_object_list)} rows were skipped because they are already in Odoo.")
+
 
         # Convert to JSON string
         json_str = json.dumps(json_object_list, indent=2, ensure_ascii=False)
