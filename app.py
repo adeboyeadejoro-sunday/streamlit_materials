@@ -3,6 +3,12 @@ import pandas as pd
 import json
 from io import StringIO
 
+from datetime import datetime
+
+today_str = datetime.today().strftime("%d%m%Y")
+supplier_sample_counter = 1
+
+
 st.set_page_config(page_title="CSV to Nested JSON", layout="centered")
 
 st.title("📄 → 🧱 CSV to Complex JSON Converter")
@@ -24,6 +30,10 @@ if uploaded_file is not None:
         for _, row in data.iterrows():
             if row.get("Odoo", "").strip().lower() != "item not in odoo":
                 continue  # Skip rows already in Odoo
+            sku = row.get("SKU", "")
+            if sku.strip().lower() == "supplier sample":
+                sku = f"SPS{today_str}-{supplier_sample_counter:02d}"
+                supplier_sample_counter += 1
 
             json_object = {
                 "prod_sku": row.get("SKU", ""),
