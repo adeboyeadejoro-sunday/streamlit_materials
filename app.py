@@ -22,7 +22,7 @@ if uploaded_file is not None:
         json_object_list = []
 
     for _, row in data.iterrows():
-        if row.get("Odoo", "").strip().lower() != "items not in odoo":
+        if row.get("Odoo", "").strip().lower() != "item not in odoo":
             continue  # Skip rows already in Odoo
 
         json_object = {
@@ -49,6 +49,9 @@ if uploaded_file is not None:
         st.success(f"✅ {len(json_object_list)} new items prepared for JSON export.")
         if len(data) > len(json_object_list):
             st.warning(f"ℹ️ {len(data) - len(json_object_list)} rows were skipped because they are already in Odoo.")
+        matching_rows = data[data["Odoo"].str.strip() == "Item Not in Odoo"]
+        st.write(f"{len(matching_rows)} rows match 'Items Not in Odoo'")
+
 
 
         # Convert to JSON string
