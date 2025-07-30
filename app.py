@@ -36,7 +36,7 @@ if uploaded_file is not None:
                 supplier_sample_counter += 1
 
             json_object = {
-                "prod_sku": row.get("SKU", ""),
+                "prod_sku": sku,
                 "prod_name": row.get("Name ↗️", ""),
                 "prod_odoo_id": None,
                 "category": "RMQ Sample",
