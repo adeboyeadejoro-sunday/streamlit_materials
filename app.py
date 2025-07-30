@@ -39,7 +39,7 @@ if uploaded_file is not None:
                 "prod_sku": sku,
                 "prod_name": row.get("Name ↗️", ""),
                 "prod_odoo_id": None,
-                "category": "RMQ Sample",
+                "category": "RMQ Probe",
                 "consumption_time": None,
                 "prod_lots": [
                     {
