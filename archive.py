@@ -2,12 +2,12 @@ import streamlit as st
 import pandas as pd
 import json
 from io import StringIO
-import uuid # Import the uuid library
 
 from datetime import datetime
 
 today_str = datetime.today().strftime("%d%m%Y")
 supplier_sample_counter = 1
+
 
 st.set_page_config(page_title="CSV to Nested JSON", layout="centered")
 
@@ -35,21 +35,16 @@ if uploaded_file is not None:
                 sku = f"SPS{today_str}-{supplier_sample_counter:02d}"
                 supplier_sample_counter += 1
 
-            # Generate a unique string for the IDs
-            unique_id = str(uuid.uuid4()).replace('-', '')[:15] # Generate a unique ID and remove dashes
-            prod_odoo_id_value = f"MB_{unique_id}"
-            lot_odoo_id_value = f"MB_{unique_id}"
-
             json_object = {
                 "prod_sku": sku,
                 "prod_name": row.get("Name ↗️", ""),
-                "prod_odoo_id": prod_odoo_id_value, # Use the generated ID
+                "prod_odoo_id": None,
                 "category": "RMQ Probe",
                 "consumption_time": None,
                 "prod_lots": [
                     {
                         "lot_ldb_id": None,
-                        "lot_odoo_id": lot_odoo_id_value, # Use the generated ID
+                        "lot_odoo_id": None,
                         "lot_name": row.get("LOT", ""),
                         "best_before": None,
                         "expiration_date": None,
