@@ -2,12 +2,13 @@ import streamlit as st
 import pandas as pd
 import json
 from io import StringIO
-import uuid # Import the uuid library
+import uuid
 
 from datetime import datetime
 
 today_str = datetime.today().strftime("%d%m%Y")
 supplier_sample_counter = 1
+
 
 st.set_page_config(page_title="CSV to Nested JSON", layout="centered")
 
@@ -35,11 +36,13 @@ if uploaded_file is not None:
                 # Generate a short, unique ID for the supplier sample SKU
                 unique_short_id = str(uuid.uuid4()).replace('-', '')[:5]
                 sku = f"SPS{today_str}-{unique_short_id}"
-
-            # Generate a unique string for the prod and lot Odoo IDs
-            unique_long_id = str(uuid.uuid4()).replace('-', '')[:15]
-            prod_odoo_id_value = f"MB_{unique_long_id}"
-            lot_odoo_id_value = f"MB_{unique_long_id}"
+            
+            # Generate two separate, unique strings for the Odoo IDs
+            prod_unique_id = str(uuid.uuid4()).replace('-', '')[:15]
+            lot_unique_id = str(uuid.uuid4()).replace('-', '')[:15]
+            
+            prod_odoo_id_value = f"MB_{prod_unique_id}"
+            lot_odoo_id_value = f"MB_{lot_unique_id}"
 
             json_object = {
                 "prod_sku": sku,

@@ -1,0 +1,80 @@
+{
+  "materials": [
+    {
+      "action": "update_or_create",
+      "id": {
+        "DDF_sku": "CAP-DR2-01L",
+        "category_id": 223,
+        "DDF_odooid": 359185
+      },
+      "data": {
+        "DDF_sku": "CAP-DR2-01L",
+        "category_id": 223,
+        "DDF_odooid": 359185,
+        "name": "DR Caps Size 2 Lonza",
+        "status": "freigegeben",
+        "DDF_consumptime": 0,
+        "sample_template_id": 199,
+        "DDF_rawmaterial": null
+      },
+      "related_data": {
+        "batches": [
+          {
+            "action": "update_or_create",
+            "id": {
+              "DDF_odoo_id": 70915
+            },
+            "data": {
+              "DDF_odoo_id": 70915,
+              "DDF_expirationdate": null,
+              "valid_till": 1906027200,
+              "name": "5428716",
+              "status": "freigegeben",
+              "DDF_mo": null,
+              "DDF_nbr_capsules": null,
+              "DDF_location": "PA2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "action": "update_or_create",
+      "id": {
+        "DDF_sku": "CAP-DR00-01L",
+        "category_id": 223,
+        "DDF_odooid": 355689
+      },
+      "data": {
+        "DDF_sku": "CAP-DR00-01L",
+        "category_id": 223,
+        "DDF_odooid": 355689,
+        "name": "DR Caps 00 _ Lonza",
+        "status": "freigegeben",
+        "DDF_consumptime": 0,
+        "sample_template_id": 199,
+        "DDF_rawmaterial": null
+      },
+      "related_data": {
+        "batches": [
+          {
+            "action": "update_or_create",
+            "id": {
+              "DDF_odoo_id": 70914
+            },
+            "data": {
+              "DDF_odoo_id": 70914,
+              "DDF_expirationdate": null,
+              "valid_till": 1905163200,
+              "name": "5427979",
+              "status": "freigegeben",
+              "DDF_mo": null,
+              "DDF_nbr_capsules": null,
+              "DDF_location": "PA2"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "materials": [
+    {
+      "action": "update_or_create",
+      "id": {
+        "DDF_sku": "SPS07082025-199f5",
+        "category_id": 220,
+        "DDF_odooid": "MB_fa5e112d2e14430"
+      },
+      "data": {
+        "DDF_sku": "SPS07082025-199f5",
+        "category_id": 220,
+        "DDF_odooid": "MB_fa5e112d2e14430",
+        "name": "Supplier Sample Material Test 011",
+        "status": "freigegeben",
+        "DDF_consumptime": null,
+        "sample_template_id": 199,
+        "DDF_rawmaterial": null
+      },
+      "related_data": {
+        "batches": [
+          {
+            "action": "update_or_create",
+            "id": {
+              "DDF_odoo_id": "MB_fa5e112d2e14430"
+            },
+            "data": {
+              "DDF_odoo_id": "MB_fa5e112d2e14430",
+              "valid_till": null,
+              "name": "Sup_Batch_11",
+              "status": "freigegeben",
+              "DDF_mo": null,
+              "DDF_nbr_capsules": null,
+              "DDF_location": "Berlin"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "action": "update_or_create",
+      "id": {
+        "DDF_sku": "SPS07082025-36016",
+        "category_id": 220,
+        "DDF_odooid": "MB_ce2f50ecb0624bb"
+      },
+      "data": {
+        "DDF_sku": "SPS07082025-36016",
+        "category_id": 220,
+        "DDF_odooid": "MB_ce2f50ecb0624bb",
+        "name": "Supplier Sample Material Test 012",
+        "status": "freigegeben",
+        "DDF_consumptime": null,
+        "sample_template_id": 199,
+        "DDF_rawmaterial": null
+      },
+      "related_data": {
+        "batches": [
+          {
+            "action": "update_or_create",
+            "id": {
+              "DDF_odoo_id": "MB_ce2f50ecb0624bb"
+            },
+            "data": {
+              "DDF_odoo_id": "MB_ce2f50ecb0624bb",
+              "valid_till": null,
+              "name": "Sup_Batch_12",
+              "status": "freigegeben",
+              "DDF_mo": null,
+              "DDF_nbr_capsules": null,
+              "DDF_location": "Berlin"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "action": "update_or_create",
+      "id": {
+        "DDF_sku": "SPS07082025-d2f87",
+        "category_id": 220,
+        "DDF_odooid": "MB_0899972b21b54fa"
+      },
+      "data": {
+        "DDF_sku": "SPS07082025-d2f87",
+        "category_id": 220,
+        "DDF_odooid": "MB_0899972b21b54fa",
+        "name": "Supplier Sample Material Test 013",
+        "status": "freigegeben",
+        "DDF_consumptime": null,
+        "sample_template_id": 199,
+        "DDF_rawmaterial": null
+      },
+      "related_data": {
+        "batches": [
+          {
+            "action": "update_or_create",
+            "id": {
+              "DDF_odoo_id": "MB_0899972b21b54fa"
+            },
+            "data": {
+              "DDF_odoo_id": "MB_0899972b21b54fa",
+              "valid_till": null,
+              "name": "Sup_Batch_13",
+              "status": "freigegeben",
+              "DDF_mo": null,
+              "DDF_nbr_capsules": null,
+              "DDF_location": "Berlin"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
